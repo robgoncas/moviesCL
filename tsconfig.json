@@ -1,10 +1,19 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ],
- "compilerOptions": {
-    "types": ["vite/client"]
-  }
+"compilerOptions": {
+  "moduleResolution": "node",   // TypeScript busca los módulos en node_modules
+  "types": ["vuetify"],         // Incluye los tipos de Vuetify
+  "skipLibCheck": true,         // Ignora la verificación de tipos en node_modules (resuelve el error de build)
+  "strict": true,                // Activa chequeos estrictos de TS en tu código (bueno para desarrollo)
+  "target": "esnext",           // Genera JS moderno
+  "module": "esnext"            // Usa módulos ES para Vite
+}
 }
